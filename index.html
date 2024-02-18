@@ -2882,7 +2882,7 @@ var customIconHome = L.icon({
 
 // Add a marker with the custom icon
 var homeMarker = L.marker([43.184512516, -79.254466056], {icon: customIconHome}).addTo(map)
-  .bindPopup("Lily Saxon HomeBase");
+  .bindPopup("START - Home Base");
 
 // Open the popup automatically when the map loads
 homeMarker.openPopup();
@@ -2898,7 +2898,7 @@ homeMarker.openPopup();
        var questions = [
             {
                 coords: [43.1827522041864, -79.25639937508032],
-                question: "Find the 3 Capital letters on the sign at this location; what Country does it represent?",
+                question: "Find the 3 Capital letters on the sign at this location; what Country does it represent? (you get one hint)",
                 answer: "Spain",
                 marker: null
             },
@@ -2951,7 +2951,7 @@ homeMarker.openPopup();
     marker.on('click', function() {
         var userAnswer = prompt(location.question);
         if (userAnswer.toLowerCase() === location.answer.toLowerCase()) {
-            alert("Correct!");
+            alert("Correct! Go to next location");
             marker.closePopup();
 
             if (index + 1 < questions.length) {
