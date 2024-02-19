@@ -554,6 +554,7 @@ body {
 <!-- Place this in your HTML -->
 <div id="hoorayPopup" class="hooray-popup" style="display: none;">
     <iframe src="https://giphy.com/embed/3oz8xAFtqoOUUrsh7W" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <p>***CHECK ON YOUR BED!!!</p>
     <button onclick="closeHoorayPopup()">Close</button>
 </div>
 
@@ -568,7 +569,8 @@ body {
 			//takes off native default Leaflet API zoom control to allow for modified zoom control/home button below
 		//zoomControl: false
 		//	});
-		  
+		  //https://giphy.com/embed/lvG3xtCyb07PWjVoj0/video
+        //https://giphy.com/embed/3oz8xAFtqoOUUrsh7W
 		  //CartoDB 'Voyager with Labels' map tiles, grabs zoom and lat-long from variables listed above
 //		map.setView([lat, lng], zoom);
 	//		L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png', {
@@ -2943,14 +2945,14 @@ homeMarker.openPopup();
                     ];
 
 
-        function addMarker(index) {
+function addMarker(index) {
     var location = questions[index];
     var marker = L.marker(location.coords, {icon: customIcon}).addTo(map);
     location.marker = marker;
 
     marker.on('click', function() {
         var userAnswer = prompt(location.question);
-        if (userAnswer.toLowerCase() === location.answer.toLowerCase()) {
+        if (userAnswer.trim().toLowerCase() === location.answer.toLowerCase()) {
             alert("Correct! Go to next location");
             marker.closePopup();
 
